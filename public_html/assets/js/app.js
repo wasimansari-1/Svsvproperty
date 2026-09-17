@@ -44,6 +44,9 @@ document.addEventListener("DOMContentLoaded", () => {
 
   // 13. Slider Revolution Hero Portal
   initRevolutionSlider();
+
+  // 14. Ultra-Fast Image & Render Performance Booster
+  boostImagePerformance();
 });
 
 /* ==========================================================================
@@ -677,6 +680,7 @@ function initHeroShowcaseAnimations() {
    12. HERO GOLDEN DUST & NEBULA PARTICLE CANVAS
    ========================================================================== */
 function initHeroParticleCanvas() {
+  if (window.innerWidth < 768) return; // Prevent mobile GPU bottleneck
   const canvas = document.getElementById("heroParticleCanvas");
   if (!canvas) return;
 
@@ -691,7 +695,7 @@ function initHeroParticleCanvas() {
   });
 
   const particles = [];
-  const particleCount = Math.min(30, Math.floor(width / 40));
+  const particleCount = Math.min(25, Math.floor(width / 45));
 
   class GoldParticle {
     constructor() {
@@ -740,6 +744,20 @@ function initHeroParticleCanvas() {
   }
 
   render();
+}
+
+/* ==========================================================================
+   14. ULTRA-FAST IMAGE & RENDER PERFORMANCE BOOSTER
+   ========================================================================== */
+function boostImagePerformance() {
+  document.querySelectorAll("img").forEach((img) => {
+    if (!img.classList.contains("rev-bg-image") && !img.closest(".site-header")) {
+      if (!img.hasAttribute("loading")) {
+        img.setAttribute("loading", "lazy");
+      }
+      img.setAttribute("decoding", "async");
+    }
+  });
 }
 
 /* ==========================================================================
