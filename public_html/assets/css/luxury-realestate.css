@@ -1357,8 +1357,10 @@ textarea.form-control {
 /* Price Box */
 .prop-price-container {
   display: flex;
-  align-items: baseline;
-  gap: 12px;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 8px 12px;
   padding: 12px 16px;
   background: rgba(255, 255, 255, 0.03);
   border-radius: var(--radius-md);
@@ -1367,7 +1369,7 @@ textarea.form-control {
 }
 
 .prop-price-label {
-  font-size: 0.8rem;
+  font-size: 0.78rem;
   color: var(--text-muted);
   text-transform: uppercase;
   font-weight: 600;
@@ -1375,9 +1377,10 @@ textarea.form-control {
 
 .prop-price-value {
   font-family: var(--font-heading);
-  font-size: 1.55rem;
+  font-size: 1.45rem;
   font-weight: 800;
   color: var(--gold-light);
+  white-space: nowrap;
 }
 
 .prop-price-note {
@@ -1385,6 +1388,10 @@ textarea.form-control {
   color: var(--emerald-accent);
   font-weight: 600;
   margin-left: auto;
+  white-space: nowrap;
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
 }
 
 /* Specs Grid */
@@ -1434,29 +1441,31 @@ textarea.form-control {
   font-size: 0.86rem;
   font-weight: 700;
   color: #fff;
+  white-space: nowrap;
 }
 
 /* Property Action Buttons */
 .prop-actions {
-  display: flex;
-  align-items: center;
-  gap: 10px;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1.35fr;
+  gap: 8px;
   padding-top: 14px;
   border-top: 1px solid var(--border-subtle);
+  align-items: stretch;
 }
 
 .btn-prop-wa {
-  flex: 1;
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  gap: 8px;
+  gap: 6px;
   background: linear-gradient(135deg, #25D366 0%, #128C7E 100%);
   color: #fff;
-  padding: 11px 16px;
+  padding: 11px 12px;
   border-radius: var(--radius-md);
-  font-size: 0.92rem;
+  font-size: 0.88rem;
   font-weight: 700;
+  white-space: nowrap;
   transition: var(--transition-fast);
 }
 
@@ -1469,14 +1478,15 @@ textarea.form-control {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  gap: 8px;
+  gap: 6px;
   background: rgba(255, 255, 255, 0.06);
   border: 1px solid var(--border-subtle);
   color: #fff;
-  padding: 11px 18px;
+  padding: 11px 12px;
   border-radius: var(--radius-md);
-  font-size: 0.92rem;
+  font-size: 0.88rem;
   font-weight: 700;
+  white-space: nowrap;
   transition: var(--transition-fast);
 }
 
@@ -1490,21 +1500,47 @@ textarea.form-control {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  gap: 8px;
+  gap: 6px;
   background: var(--gold-gradient);
   color: #080c14;
-  padding: 11px 20px;
+  padding: 11px 14px;
   border-radius: var(--radius-md);
-  font-size: 0.92rem;
+  font-size: 0.88rem;
   font-weight: 800;
   border: none;
   cursor: pointer;
+  white-space: nowrap;
   transition: var(--transition-fast);
 }
 
 .btn-prop-inquire:hover {
   transform: translateY(-2px);
   box-shadow: 0 4px 15px rgba(212, 175, 55, 0.3);
+}
+
+@media (max-width: 600px) {
+  .prop-actions {
+    grid-template-columns: 1fr 1fr;
+    gap: 8px;
+  }
+  
+  .btn-prop-inquire {
+    grid-column: span 2;
+    order: -1;
+    padding: 12px 16px;
+    font-size: 0.94rem;
+    box-shadow: 0 4px 15px rgba(212, 175, 55, 0.25);
+  }
+
+  .btn-prop-wa,
+  .btn-prop-call {
+    padding: 10px 14px;
+    font-size: 0.88rem;
+  }
+  
+  .prop-specs-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
 }
 
 /* ==========================================================================
