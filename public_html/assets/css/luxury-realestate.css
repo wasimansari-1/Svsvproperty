@@ -419,22 +419,22 @@ button, input, select, textarea {
 }
 
 /* ==========================================================================
-   HERO SECTION
+   HERO SECTION (ULTRA-LUXURY GSAP DRIVEN PORTAL)
    ========================================================================== */
 .hero-section {
   position: relative;
-  padding-top: 130px;
-  padding-bottom: 70px;
-  background: linear-gradient(180deg, rgba(8, 12, 20, 0.4) 0%, var(--bg-main) 100%),
-              radial-gradient(circle at 50% 20%, rgba(212, 175, 55, 0.12) 0%, rgba(8, 12, 20, 0) 65%);
+  padding-top: 135px;
+  padding-bottom: 75px;
+  background: linear-gradient(180deg, rgba(8, 12, 20, 0.6) 0%, var(--bg-main) 100%),
+              radial-gradient(circle at 50% 15%, rgba(212, 175, 55, 0.18) 0%, rgba(8, 12, 20, 0) 70%);
   overflow: hidden;
 }
 
 .hero-grid {
   display: grid;
-  grid-template-columns: 1.2fr 0.8fr;
-  gap: 40px;
-  align-items: center;
+  grid-template-columns: 1.15fr 0.85fr;
+  gap: 36px;
+  align-items: flex-start;
 }
 
 .hero-content {
@@ -446,73 +446,106 @@ button, input, select, textarea {
   display: inline-flex;
   align-items: center;
   gap: 10px;
-  background: rgba(239, 68, 68, 0.12);
-  border: 1px solid rgba(239, 68, 68, 0.35);
-  color: #fca5a5;
-  padding: 6px 14px;
+  background: rgba(212, 175, 55, 0.08);
+  border: 1px solid rgba(212, 175, 55, 0.35);
+  color: var(--gold-light);
+  padding: 6px 16px;
   border-radius: var(--radius-full);
-  font-size: 0.85rem;
+  font-size: 0.82rem;
   font-weight: 700;
-  margin-bottom: 20px;
-  animation: pulse-border 2s infinite;
+  letter-spacing: 0.5px;
+  margin-bottom: 18px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4), 0 0 15px rgba(212, 175, 55, 0.15);
 }
 
 .live-dot {
-  width: 8px;
-  height: 8px;
-  background-color: #ef4444;
+  width: 9px;
+  height: 9px;
+  background-color: #22c55e;
   border-radius: 50%;
   display: inline-block;
-  box-shadow: 0 0 10px #ef4444;
+  box-shadow: 0 0 10px #22c55e;
   animation: blink 1.2s infinite;
 }
 
 .hero-title {
-  font-size: clamp(2.3rem, 4.5vw, 3.6rem);
+  font-size: clamp(2.2rem, 4.2vw, 3.5rem);
   font-weight: 800;
-  letter-spacing: -1px;
-  line-height: 1.15;
-  margin-bottom: 18px;
+  letter-spacing: -0.8px;
+  line-height: 1.14;
+  margin-bottom: 16px;
 }
 
 .hero-desc {
-  font-size: 1.12rem;
-  color: var(--text-muted);
-  line-height: 1.6;
-  margin-bottom: 26px;
-  max-width: 600px;
+  font-size: 1.08rem;
+  color: #cbd5e1;
+  line-height: 1.65;
+  margin-bottom: 24px;
+  max-width: 620px;
 }
 
+/* Compact Luxury Metrics Grid (2x2) */
 .hero-highlights {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  grid-template-columns: repeat(2, 1fr);
   gap: 12px;
-  margin-bottom: 30px;
+  margin-bottom: 24px;
 }
 
 .highlight-item {
   display: flex;
   align-items: center;
-  gap: 10px;
-  background: rgba(255, 255, 255, 0.03);
-  border: 1px solid var(--border-subtle);
-  padding: 10px 14px;
-  border-radius: var(--radius-md);
-  font-size: 0.88rem;
-  font-weight: 600;
+  gap: 12px;
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.04) 0%, rgba(15, 23, 42, 0.6) 100%);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  padding: 12px 16px;
+  border-radius: 14px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+  transition: all 0.25s ease;
 }
 
-.highlight-item i {
+.highlight-item:hover {
+  border-color: var(--gold-primary);
+  background: linear-gradient(135deg, rgba(212, 175, 55, 0.12) 0%, rgba(15, 23, 42, 0.8) 100%);
+  transform: translateY(-2px);
+}
+
+.highlight-item .highlight-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  border-radius: 10px;
+  background: rgba(212, 175, 55, 0.12);
   color: var(--gold-light);
   font-size: 1.1rem;
+}
+
+.highlight-item .highlight-text {
+  display: flex;
+  flex-direction: column;
+}
+
+.highlight-item .highlight-main {
+  font-size: 0.92rem;
+  font-weight: 700;
+  color: #ffffff;
+  line-height: 1.2;
+}
+
+.highlight-item .highlight-sub {
+  font-size: 0.72rem;
+  color: var(--gold-light);
+  font-weight: 600;
 }
 
 .hero-cta-group {
   display: flex;
   flex-wrap: wrap;
-  gap: 14px;
+  gap: 12px;
   align-items: center;
-  margin-bottom: 35px;
+  margin-bottom: 28px;
 }
 
 .btn-primary {
