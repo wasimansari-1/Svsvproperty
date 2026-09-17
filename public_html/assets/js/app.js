@@ -431,16 +431,50 @@ function initLeadForms() {
       try {
         await Promise.race([
           Promise.all(dispatchPromises),
-          new Promise((resolve) => setTimeout(resolve, 1500)) // fast UX transition
+          new Promise((resolve) => setTimeout(resolve, 1400)) // fast UX transition
         ]);
 
-        closeAllModals();
-        showSuccessModal(name, cleanPhone, project);
-        form.reset();
+        // Preserve and build query parameters for Thank-You page & Meta Tracking
+        const currentUrlParams = new URLSearchParams(window.location.search);
+        const redirectParams = new URLSearchParams();
+        if (name) redirectParams.set("name", name);
+        if (cleanPhone) redirectParams.set("phone", cleanPhone);
+        if (project) redirectParams.set("project", project);
+        if (address) redirectParams.set("address", address);
+
+        for (const [key, value] of currentUrlParams.entries()) {
+          if (!redirectParams.has(key)) {
+            redirectParams.set(key, value);
+          }
+        }
+
+        // Determine correct path to thank-you.html
+        let thankYouBase = "thank-you.html";
+        const path = window.location.pathname.toLowerCase();
+        if (
+          path.includes("/contact/") ||
+          path.includes("/about/") ||
+          path.includes("/properties/") ||
+          path.includes("/services/")
+        ) {
+          thankYouBase = "../thank-you.html";
+        }
+
+        const queryString = redirectParams.toString();
+        window.location.href = thankYouBase + (queryString ? "?" + queryString : "");
       } catch (error) {
         console.error("Submission error:", error);
-        closeAllModals();
-        showSuccessModal(name, cleanPhone, project);
+        let thankYouBase = "thank-you.html";
+        const path = window.location.pathname.toLowerCase();
+        if (
+          path.includes("/contact/") ||
+          path.includes("/about/") ||
+          path.includes("/properties/") ||
+          path.includes("/services/")
+        ) {
+          thankYouBase = "../thank-you.html";
+        }
+        window.location.href = thankYouBase;
       } finally {
         if (submitBtn) {
           submitBtn.disabled = false;
