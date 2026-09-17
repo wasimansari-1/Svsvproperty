@@ -1,0 +1,105 @@
+﻿@font-face {
+  font-family: 'Jost';
+  font-style: normal;
+  font-weight: 100;
+  font-display: fallback;
+  src: url(s/jost/v20/92zPtBhPNqw79Ij1E865zBUv7myjJDVPNI0.ttf) format('truetype');
+}
+@font-face {
+  font-family: 'Jost';
+  font-style: normal;
+  font-weight: 200;
+  font-display: fallback;
+  src: url(s/jost/v20/92zPtBhPNqw79Ij1E865zBUv7mwjJTVPNI0.ttf) format('truetype');
+}
+@font-face {
+  font-family: 'Jost';
+  font-style: normal;
+  font-weight: 300;
+  font-display: fallback;
+  src: url(s/jost/v20/92zPtBhPNqw79Ij1E865zBUv7mz9JTVPNI0.ttf) format('truetype');
+}
+@font-face {
+  font-family: 'Jost';
+  font-style: normal;
+  font-weight: 400;
+  font-display: fallback;
+  src: url(s/jost/v20/92zPtBhPNqw79Ij1E865zBUv7myjJTVPNI0.ttf) format('truetype');
+}
+@font-face {
+  font-family: 'Jost';
+  font-style: normal;
+  font-weight: 500;
+  font-display: fallback;
+  src: url(s/jost/v20/92zPtBhPNqw79Ij1E865zBUv7myRJTVPNI0.ttf) format('truetype');
+}
+@font-face {
+  font-family: 'Jost';
+  font-style: normal;
+  font-weight: 600;
+  font-display: fallback;
+  src: url(s/jost/v20/92zPtBhPNqw79Ij1E865zBUv7mx9IjVPNI0.ttf) format('truetype');
+}
+@font-face {
+  font-family: 'Jost';
+  font-style: normal;
+  font-weight: 700;
+  font-display: fallback;
+  src: url(s/jost/v20/92zPtBhPNqw79Ij1E865zBUv7mxEIjVPNI0.ttf) format('truetype');
+}
+@font-face {
+  font-family: 'Jost';
+  font-style: normal;
+  font-weight: 800;
+  font-display: fallback;
+  src: url(s/jost/v20/92zPtBhPNqw79Ij1E865zBUv7mwjIjVPNI0.ttf) format('truetype');
+}
+@font-face {
+  font-family: 'Jost';
+  font-style: normal;
+  font-weight: 900;
+  font-display: fallback;
+  src: url(s/jost/v20/92zPtBhPNqw79Ij1E865zBUv7mwKIjVPNI0.ttf) format('truetype');
+}
+@font-face {
+  font-family: 'Rubik';
+  font-style: italic;
+  font-weight: 400;
+  font-display: fallback;
+  src: url(s/rubik/v31/iJWbBXyIfDnIV7nEt3KSJbVDV49rz8tdE3U5f4c.ttf) format('truetype');
+}
+@font-face {
+  font-family: 'Rubik';
+  font-style: italic;
+  font-weight: 500;
+  font-display: fallback;
+  src: url(s/rubik/v31/iJWbBXyIfDnIV7nEt3KSJbVDV49rz8tvE3U5f4c.ttf) format('truetype');
+}
+@font-face {
+  font-family: 'Rubik';
+  font-style: italic;
+  font-weight: 700;
+  font-display: fallback;
+  src: url(s/rubik/v31/iJWbBXyIfDnIV7nEt3KSJbVDV49rz8u6FHU5f4c.ttf) format('truetype');
+}
+@font-face {
+  font-family: 'Rubik';
+  font-style: normal;
+  font-weight: 400;
+  font-display: fallback;
+  src: url(s/rubik/v31/iJWZBXyIfDnIV5PNhY1KTN7Z-Yh-B4iFWUUw.ttf) format('truetype');
+}
+@font-face {
+  font-family: 'Rubik';
+  font-style: normal;
+  font-weight: 500;
+  font-display: fallback;
+  src: url(s/rubik/v31/iJWZBXyIfDnIV5PNhY1KTN7Z-Yh-NYiFWUUw.ttf) format('truetype');
+}
+@font-face {
+  font-family: 'Rubik';
+  font-style: normal;
+  font-weight: 700;
+  font-display: fallback;
+  src: url(s/rubik/v31/iJWZBXyIfDnIV5PNhY1KTN7Z-Yh-4I-FWUUw.ttf) format('truetype');
+}
