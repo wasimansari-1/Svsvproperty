@@ -41,6 +41,9 @@ document.addEventListener("DOMContentLoaded", () => {
 
   // 12. Hero Golden Dust Particle Canvas
   initHeroParticleCanvas();
+
+  // 13. Slider Revolution Hero Portal
+  initRevolutionSlider();
 });
 
 /* ==========================================================================
@@ -737,4 +740,175 @@ function initHeroParticleCanvas() {
   }
 
   render();
+}
+
+/* ==========================================================================
+   13. SLIDER REVOLUTION - HERO SLIDER ENGINE WITH TOUCH SWIPE & GSAP
+   ========================================================================== */
+function initRevolutionSlider() {
+  const container = document.getElementById("hero");
+  if (!container) return;
+
+  const slides = container.querySelectorAll(".rev-slide");
+  if (!slides || slides.length === 0) return;
+
+  const prevBtn = document.getElementById("revPrevBtn");
+  const nextBtn = document.getElementById("revNextBtn");
+  const bullets = document.querySelectorAll("#revBullets .rev-bullet");
+  const progressBar = document.getElementById("revProgressBar");
+
+  let currentIndex = 0;
+  let isTransitioning = false;
+  const slideIntervalTime = 6000;
+  let slideTimer = null;
+
+  function animateElementsInSlide(slide) {
+    if (typeof gsap !== "undefined") {
+      const badge = slide.querySelector(".rev-badge");
+      const title = slide.querySelector(".rev-title");
+      const desc = slide.querySelector(".rev-desc");
+      const metrics = slide.querySelectorAll(".rev-metric-pill");
+      const ctas = slide.querySelectorAll(".rev-cta-group > *");
+      const form = slide.querySelector(".lead-form-card");
+
+      const tl = gsap.timeline();
+      if (badge) tl.fromTo(badge, { opacity: 0, y: 15 }, { opacity: 1, y: 0, duration: 0.4, ease: "power2.out" }, 0.1);
+      if (title) tl.fromTo(title, { opacity: 0, y: 20 }, { opacity: 1, y: 0, duration: 0.5, ease: "power2.out" }, 0.2);
+      if (desc) tl.fromTo(desc, { opacity: 0, y: 15 }, { opacity: 1, y: 0, duration: 0.4, ease: "power2.out" }, 0.3);
+      if (metrics.length) tl.fromTo(metrics, { opacity: 0, y: 10, scale: 0.95 }, { opacity: 1, y: 0, scale: 1, duration: 0.35, stagger: 0.05, ease: "back.out(1.4)" }, 0.4);
+      if (ctas.length) tl.fromTo(ctas, { opacity: 0, y: 10 }, { opacity: 1, y: 0, duration: 0.35, stagger: 0.05, ease: "power2.out" }, 0.5);
+      if (form) tl.fromTo(form, { opacity: 0, x: 25 }, { opacity: 1, x: 0, duration: 0.6, ease: "power2.out" }, 0.3);
+    }
+  }
+
+  function startProgressBar() {
+    if (!progressBar) return;
+    if (typeof gsap !== "undefined") {
+      gsap.killTweensOf(progressBar);
+      gsap.set(progressBar, { width: "0%" });
+      gsap.to(progressBar, {
+        width: "100%",
+        duration: slideIntervalTime / 1000,
+        ease: "linear",
+      });
+    } else {
+      progressBar.style.transition = "none";
+      progressBar.style.width = "0%";
+      setTimeout(() => {
+        progressBar.style.transition = `width ${slideIntervalTime}ms linear`;
+        progressBar.style.width = "100%";
+      }, 50);
+    }
+  }
+
+  function goToSlide(newIndex) {
+    if (isTransitioning) return;
+    if (newIndex === currentIndex) return;
+
+    isTransitioning = true;
+    const oldSlide = slides[currentIndex];
+    const newSlide = slides[newIndex];
+
+    oldSlide.classList.remove("active");
+    newSlide.classList.add("active");
+
+    bullets.forEach((b, i) => {
+      b.classList.toggle("active", i === newIndex);
+    });
+
+    currentIndex = newIndex;
+    animateElementsInSlide(newSlide);
+    resetAutoPlay();
+
+    setTimeout(() => {
+      isTransitioning = false;
+    }, 800);
+  }
+
+  function nextSlide() {
+    const nextIdx = (currentIndex + 1) % slides.length;
+    goToSlide(nextIdx);
+  }
+
+  function prevSlide() {
+    const prevIdx = (currentIndex - 1 + slides.length) % slides.length;
+    goToSlide(prevIdx);
+  }
+
+  function startAutoPlay() {
+    startProgressBar();
+    clearInterval(slideTimer);
+    slideTimer = setInterval(() => {
+      nextSlide();
+    }, slideIntervalTime);
+  }
+
+  function resetAutoPlay() {
+    clearInterval(slideTimer);
+    startAutoPlay();
+  }
+
+  // Prev / Next button listeners
+  if (prevBtn) {
+    prevBtn.addEventListener("click", () => {
+      prevSlide();
+    });
+  }
+  if (nextBtn) {
+    nextBtn.addEventListener("click", () => {
+      nextSlide();
+    });
+  }
+
+  // Bullet indicators
+  bullets.forEach((bullet) => {
+    bullet.addEventListener("click", () => {
+      const idx = parseInt(bullet.getAttribute("data-slide"), 10);
+      if (!isNaN(idx)) {
+        goToSlide(idx);
+      }
+    });
+  });
+
+  // Touch Swipe Gesture Support (Mobile UX)
+  let touchStartX = 0;
+  let touchEndX = 0;
+  let touchStartY = 0;
+  let touchEndY = 0;
+
+  container.addEventListener(
+    "touchstart",
+    (e) => {
+      touchStartX = e.changedTouches[0].screenX;
+      touchStartY = e.changedTouches[0].screenY;
+    },
+    { passive: true }
+  );
+
+  container.addEventListener(
+    "touchend",
+    (e) => {
+      touchEndX = e.changedTouches[0].screenX;
+      touchEndY = e.changedTouches[0].screenY;
+      handleSwipe();
+    },
+    { passive: true }
+  );
+
+  function handleSwipe() {
+    const diffX = touchEndX - touchStartX;
+    const diffY = touchEndY - touchStartY;
+    // Ensure horizontal gesture
+    if (Math.abs(diffX) > Math.abs(diffY) && Math.abs(diffX) > 40) {
+      if (diffX < 0) {
+        nextSlide();
+      } else {
+        prevSlide();
+      }
+    }
+  }
+
+  // Initial setup
+  animateElementsInSlide(slides[0]);
+  startAutoPlay();
 }

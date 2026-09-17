@@ -165,207 +165,187 @@
 
   <main>
     <!-- ==========================================================================
-         2. HERO SECTION (HIGH CONVERTING META ADS LANDING)
+         2. HERO SECTION - SLIDER REVOLUTION LUXURY PORTAL
          ========================================================================== -->
-    <section class="hero-section" id="hero">
-      <canvas class="hero-canvas-bg" id="heroParticleCanvas"></canvas>
-      <div class="container" style="position:relative;z-index:2">
-        <div class="hero-grid">
-          
-          <!-- Hero Left Column: Core Value Proposition & 3D Animated Showcase -->
-          <div class="hero-content">
-            <div class="live-badge">
-              <span class="live-dot"></span>
-              <span>🔥 Gated Township Near Jewar International Airport • Sector 22D</span>
-            </div>
+    <section class="hero-rev-slider-container" id="hero">
+      <div class="rev-progress-bar" id="revProgressBar"></div>
 
-            <h1 class="hero-title">
-              Own Prime Freehold <span class="text-gold">Plots & Farmhouses</span> in Jewar Corridor
-            </h1>
-
-            <p class="hero-desc">
-              Direct developer allotment in Delhi-NCR's #1 booming investment zone. Immediate 100% Registry & Dakhil Kharij with 40ft wide blacktop roads, underground utilities & high capital growth.
-            </p>
-
-            <!-- Key Feature Metrics Grid (2x2) -->
-            <div class="hero-highlights">
-              <div class="highlight-item">
-                <div class="highlight-icon"><i class="fas fa-plane-departure"></i></div>
-                <div class="highlight-text">
-                  <span class="highlight-main">10 Mins to Airport</span>
-                  <span class="highlight-sub">Noida Intl Runway</span>
+      <!-- Slides Wrapper -->
+      <div class="hero-rev-slides" id="revSlides">
+        
+        <!-- Slide 1: Grand 8K Masterplan & Entrance Gate -->
+        <div class="rev-slide active" data-index="0">
+          <img src="assets/images/hero-jewar-township.jpg" alt="SV Township Jewar Airport Corridor 8K Masterplan" class="rev-bg-image">
+          <div class="rev-overlay"></div>
+          <div class="container rev-content-layer">
+            <div class="rev-content-grid">
+              <div class="rev-text-col">
+                <div class="rev-badge">
+                  <span class="live-dot"></span>
+                  <span>🔥 JEWAR AIRPORT CORRIDOR • SECTOR 22D</span>
+                </div>
+                <h1 class="rev-title">
+                  Own Prime Freehold <span class="text-gold">Plots & Farmhouses</span>
+                </h1>
+                <p class="rev-desc">
+                  Direct developer allotment in Delhi-NCR's #1 booming investment corridor. 100% Registry & Dakhil Kharij with 40ft wide blacktop roads.
+                </p>
+                <div class="rev-metrics-strip">
+                  <span class="rev-metric-pill"><i class="fas fa-plane-departure"></i> <strong>10 Mins</strong> Airport</span>
+                  <span class="rev-metric-pill"><i class="fas fa-certificate"></i> <strong>100%</strong> Freehold</span>
+                  <span class="rev-metric-pill"><i class="fas fa-road"></i> <strong>40 Ft</strong> Roads</span>
+                  <span class="rev-metric-pill"><i class="fas fa-tags"></i> From <strong>₹18,500/sq.yd</strong></span>
+                </div>
+                <div class="rev-cta-group">
+                  <a href="#projects" class="btn-primary">
+                    <i class="fas fa-bolt"></i> Claim Price List & Brochure
+                  </a>
+                  <a href="https://wa.me/919625608176?text=Hi%20SV%20Property%20Team%2C%20I%20am%20interested%20in%20Jewar%20Township%20plots." target="_blank" class="btn-whatsapp">
+                    <i class="fab fa-whatsapp"></i> WhatsApp
+                  </a>
+                  <button class="btn-outline" data-open-modal="modal-inquiry" data-project="Free VIP Cab Visit">
+                    <i class="fas fa-car-side"></i> Free VIP Cab
+                  </button>
                 </div>
               </div>
-              <div class="highlight-item">
-                <div class="highlight-icon"><i class="fas fa-certificate"></i></div>
-                <div class="highlight-text">
-                  <span class="highlight-main">100% Freehold</span>
-                  <span class="highlight-sub">Immediate Dakhil Kharij</span>
-                </div>
-              </div>
-              <div class="highlight-item">
-                <div class="highlight-icon"><i class="fas fa-road"></i></div>
-                <div class="highlight-text">
-                  <span class="highlight-main">40 Ft Wide Roads</span>
-                  <span class="highlight-sub">Gated 24x7 Security</span>
-                </div>
-              </div>
-              <div class="highlight-item">
-                <div class="highlight-icon"><i class="fas fa-tags"></i></div>
-                <div class="highlight-text">
-                  <span class="highlight-main">₹18,500 / sq.yd</span>
-                  <span class="highlight-sub">Direct Developer Rates</span>
-                </div>
-              </div>
-            </div>
-
-            <!-- 3D Animated Hero Visual Showcase (GSAP Powered with 8K Masterplan Render) -->
-            <div class="hero-visual-showcase" id="heroShowcase">
-              <div class="hero-media-frame">
-                <img src="assets/images/hero-jewar-township.jpg" alt="SV Township Jewar Airport Masterplan 8K" class="hero-slide-img active">
-                <img src="assets/images/hero-luxury-villa.jpg" alt="Luxury Farmhouses & Villas Jewar" class="hero-slide-img">
-                <img src="sp1.png" alt="SV Township Gated Plots" class="hero-slide-img">
-                <div class="hero-media-overlay"></div>
-
-                <!-- Floating 3D Interactive Live Badges -->
-                <div class="hero-float-badge pos-top-left" data-speed="1.2">
-                  <div class="badge-icon-gold"><i class="fas fa-shield-alt"></i></div>
-                  <div class="badge-text-group">
-                    <span class="badge-text-main">100% Freehold Registry</span>
-                    <span class="badge-text-sub">Instant Dakhil Kharij</span>
+              <div class="rev-form-col">
+                <div class="lead-form-card" style="box-shadow:0 25px 60px rgba(0,0,0,0.85)">
+                  <div class="lead-form-header">
+                    <span class="lead-form-pill"><i class="fas fa-bolt"></i> Instant Price Sheet & Brochure</span>
+                    <h2 class="lead-form-title">Book Free Site Visit</h2>
+                    <p class="lead-form-desc">Get direct developer rates & free cab pickup</p>
                   </div>
+                  <form action="submit.php" method="POST" class="lead-capture-form" id="hero-lead-form">
+                    <input type="hidden" name="form_type" value="hero_form">
+                    <div class="form-group">
+                      <label for="hero-name">Full Name *</label>
+                      <div class="input-with-icon">
+                        <input type="text" id="hero-name" name="name" class="form-control" placeholder="Enter your full name" required>
+                        <i class="fas fa-user"></i>
+                      </div>
+                    </div>
+                    <div class="form-group">
+                      <label for="hero-phone">Mobile Number *</label>
+                      <div class="input-with-icon">
+                        <input type="tel" id="hero-phone" name="phone" class="form-control" placeholder="10-digit mobile number" pattern="[0-9]{10}" required>
+                        <i class="fas fa-phone"></i>
+                      </div>
+                    </div>
+                    <div class="form-group">
+                      <label for="hero-project">Preferred Property Option</label>
+                      <div class="input-with-icon">
+                        <select id="hero-project" name="project" class="form-control">
+                          <option value="SV Township Phase 1 (₹30k/Sq.Yd)">SV Township Phase 1 (₹30,000/Sq.Yd)</option>
+                          <option value="SV Township Phase 2 (₹25k/Gaj)">SV Township Phase 2 (₹25,000/Gaj)</option>
+                          <option value="SV Farm House (₹40L/Bigha)">SV Farm House (₹40 Lakh/Bigha)</option>
+                          <option value="SV Premium Commercial Estate (₹50L/Bigha)">SV Premium Estate (₹50 Lakh/Bigha)</option>
+                          <option value="ATS Allure 3BHK Luxury (₹1.5Cr)">ATS Allure 3BHK (₹1.50 Crore)</option>
+                        </select>
+                        <i class="fas fa-city"></i>
+                      </div>
+                    </div>
+                    <button type="submit" class="form-btn-submit">
+                      <span>Get Instant Brochure & Best Price</span>
+                      <i class="fas fa-arrow-right"></i>
+                    </button>
+                  </form>
                 </div>
-
-                <div class="hero-float-badge pos-top-right" data-speed="0.8">
-                  <span class="badge-pulse-dot"></span>
-                  <div class="badge-text-group">
-                    <span class="badge-text-main">Jewar Airport Runway</span>
-                    <span class="badge-text-sub">10 Mins Direct Drive</span>
-                  </div>
-                </div>
-
-                <div class="hero-float-badge pos-bottom-left" data-speed="1.4">
-                  <div class="badge-icon-gold"><i class="fas fa-road"></i></div>
-                  <div class="badge-text-group">
-                    <span class="badge-text-main">40 Ft Wide Roads</span>
-                    <span class="badge-text-sub">Gated CCTV Security</span>
-                  </div>
-                </div>
-
-                <div class="hero-float-badge pos-bottom-right" data-speed="1.1">
-                  <div class="badge-icon-gold"><i class="fas fa-tags"></i></div>
-                  <div class="badge-text-group">
-                    <span class="badge-text-main">From ₹18,500/sq.yd</span>
-                    <span class="badge-text-sub">High ROI Capital Gain</span>
-                  </div>
-                </div>
-              </div>
-
-              <!-- Live Interactive Showcase Ticker -->
-              <div class="hero-showcase-ticker">
-                <span><i class="fas fa-crown"></i> <strong>SV TOWNSHIP PHASE 1 & 2</strong></span>
-                <span><i class="fas fa-map-marker-alt"></i> Sector 22D Yamuna Exp</span>
-                <span><i class="fas fa-car-side"></i> Free VIP Cab Pickup</span>
-              </div>
-            </div>
-
-            <!-- Hero Action Buttons -->
-            <div class="hero-cta-group">
-              <a href="#projects" class="btn-primary">
-                <i class="fas fa-map-marked-alt"></i> Explore Projects
-              </a>
-              <a href="https://wa.me/919625608176?text=Hi%20SV%20Property%20Team%2C%20I%20want%20to%20book%20a%20Free%20VIP%20Site%20Visit%20for%20Jewar%20Township%20plots." target="_blank" class="btn-whatsapp">
-                <i class="fab fa-whatsapp"></i> WhatsApp Brochure
-              </a>
-              <button class="btn-outline" data-open-modal="modal-inquiry" data-project="Free VIP Site Visit">
-                <i class="fas fa-car-side"></i> Free VIP Cab Visit
-              </button>
-            </div>
-
-            <!-- Social Proof Bar -->
-            <div class="hero-trust-bar">
-              <div class="trust-avatars">
-                <div class="trust-avatar">RK</div>
-                <div class="trust-avatar">AS</div>
-                <div class="trust-avatar">VG</div>
-                <div class="trust-avatar">MK</div>
-              </div>
-              <div class="trust-text">
-                <div>
-                  <span class="trust-stars">★★★★★</span>
-                  <strong>4.9 / 5 Rating</strong>
-                </div>
-                <span>1,200+ Site Visits Booked this Month • 500+ Happy Investors</span>
               </div>
             </div>
           </div>
-
-          <!-- Hero Right Column: Sticky Lead Capture Card -->
-          <div class="hero-form-wrapper">
-            <div class="lead-form-card">
-              <div class="lead-form-header">
-                <span class="lead-form-pill">
-                  <i class="fas fa-bolt"></i> Instant Price Sheet & Brochure
-                </span>
-                <h2 class="lead-form-title">Book Free Site Visit</h2>
-                <p class="lead-form-desc">Fill details to get direct developer pricing & VIP pickup</p>
-              </div>
-
-              <form action="submit.php" method="POST" class="lead-capture-form" id="hero-lead-form">
-                <input type="hidden" name="form_type" value="hero_form">
-                
-                <div class="form-group">
-                  <label for="hero-name">Full Name *</label>
-                  <div class="input-with-icon">
-                    <input type="text" id="hero-name" name="name" class="form-control" placeholder="Enter your full name" required>
-                    <i class="fas fa-user"></i>
-                  </div>
-                </div>
-
-                <div class="form-group">
-                  <label for="hero-phone">Mobile Number *</label>
-                  <div class="input-with-icon">
-                    <input type="tel" id="hero-phone" name="phone" class="form-control" placeholder="10-digit mobile number" pattern="[0-9]{10}" required>
-                    <i class="fas fa-phone"></i>
-                  </div>
-                </div>
-
-                <div class="form-group">
-                  <label for="hero-project">Preferred Property Option</label>
-                  <div class="input-with-icon">
-                    <select id="hero-project" name="project" class="form-control">
-                      <option value="SV Township Phase 1 (₹30k/Sq.Yd)">SV Township Phase 1 (₹30,000/Sq.Yd)</option>
-                      <option value="SV Township Phase 2 (₹25k/Gaj)">SV Township Phase 2 (₹25,000/Gaj)</option>
-                      <option value="SV Farm House (₹40L/Bigha)">SV Farm House (₹40 Lakh/Bigha)</option>
-                      <option value="SV Premium Commercial Estate (₹50L/Bigha)">SV Premium Estate (₹50 Lakh/Bigha)</option>
-                      <option value="ATS Allure 3BHK Luxury (₹1.5Cr)">ATS Allure 3BHK (₹1.50 Crore)</option>
-                    </select>
-                    <i class="fas fa-city"></i>
-                  </div>
-                </div>
-
-                <div class="form-group">
-                  <label for="hero-address">City / Location</label>
-                  <div class="input-with-icon">
-                    <input type="text" id="hero-address" name="address" class="form-control" placeholder="e.g. Delhi, Noida, Gurgaon, NRI">
-                    <i class="fas fa-map-marker-alt"></i>
-                  </div>
-                </div>
-
-                <button type="submit" class="form-btn-submit">
-                  <span>Get Instant Callback & Brochure</span>
-                  <i class="fas fa-arrow-right"></i>
-                </button>
-
-                <div class="form-privacy">
-                  <i class="fas fa-lock"></i>
-                  <span>Zero Brokerage • 100% Direct Developer Assurance</span>
-                </div>
-              </form>
-            </div>
-          </div>
-
         </div>
+
+        <!-- Slide 2: Luxury Poolside Farmhouse & Villa -->
+        <div class="rev-slide" data-index="1">
+          <img src="assets/images/hero-luxury-villa.jpg" alt="Luxury Farmhouses & Weekend Villas Jewar" class="rev-bg-image">
+          <div class="rev-overlay"></div>
+          <div class="container rev-content-layer">
+            <div class="rev-content-grid">
+              <div class="rev-text-col">
+                <div class="rev-badge">
+                  <span class="live-dot"></span>
+                  <span>🏡 LUXURY FARMHOUSES & ESTATES</span>
+                </div>
+                <h2 class="rev-title">
+                  Private Pool Estates & <span class="text-gold">Weekend Villas</span>
+                </h2>
+                <p class="rev-desc">
+                  Sprawling green farmland plots with gated 24x7 security, clubhouse amenities & high capital appreciation near Jewar Airport.
+                </p>
+                <div class="rev-metrics-strip">
+                  <span class="rev-metric-pill"><i class="fas fa-tree"></i> <strong>1000-4000</strong> Sq.Yd</span>
+                  <span class="rev-metric-pill"><i class="fas fa-swimming-pool"></i> <strong>Private</strong> Pool Option</span>
+                  <span class="rev-metric-pill"><i class="fas fa-shield-alt"></i> <strong>Gated</strong> Security</span>
+                  <span class="rev-metric-pill"><i class="fas fa-car-side"></i> <strong>Free Cab</strong> Site Visit</span>
+                </div>
+                <div class="rev-cta-group">
+                  <a href="#projects" class="btn-primary">
+                    <i class="fas fa-eye"></i> View Farmhouse Layouts
+                  </a>
+                  <a href="https://wa.me/919625608176?text=Hi%20SV%20Property%20Team%2C%20I%20am%20interested%20in%20Jewar%20Farmhouses." target="_blank" class="btn-whatsapp">
+                    <i class="fab fa-whatsapp"></i> WhatsApp
+                  </a>
+                  <button class="btn-outline" data-open-modal="modal-inquiry" data-project="Farmhouse Inquiry">
+                    <i class="fas fa-phone-alt"></i> Call Advisor
+                  </button>
+                </div>
+              </div>
+              <div class="rev-form-col">
+                <div class="lead-form-card" style="box-shadow:0 25px 60px rgba(0,0,0,0.85)">
+                  <div class="lead-form-header">
+                    <span class="lead-form-pill"><i class="fas fa-bolt"></i> Instant Price Sheet & Brochure</span>
+                    <h3 class="lead-form-title">Book Free Site Visit</h3>
+                    <p class="lead-form-desc">Get direct developer rates & free cab pickup</p>
+                  </div>
+                  <form action="submit.php" method="POST" class="lead-capture-form" id="hero-lead-form-2">
+                    <input type="hidden" name="form_type" value="hero_farmhouse_form">
+                    <div class="form-group">
+                      <label for="hero-name-2">Full Name *</label>
+                      <div class="input-with-icon">
+                        <input type="text" id="hero-name-2" name="name" class="form-control" placeholder="Enter your full name" required>
+                        <i class="fas fa-user"></i>
+                      </div>
+                    </div>
+                    <div class="form-group">
+                      <label for="hero-phone-2">Mobile Number *</label>
+                      <div class="input-with-icon">
+                        <input type="tel" id="hero-phone-2" name="phone" class="form-control" placeholder="10-digit mobile number" pattern="[0-9]{10}" required>
+                        <i class="fas fa-phone"></i>
+                      </div>
+                    </div>
+                    <div class="form-group">
+                      <label for="hero-project-2">Preferred Property Option</label>
+                      <div class="input-with-icon">
+                        <select id="hero-project-2" name="project" class="form-control">
+                          <option value="SV Farm House (₹40L/Bigha)">SV Farm House (₹40 Lakh/Bigha)</option>
+                          <option value="SV Township Phase 1 (₹30k/Sq.Yd)">SV Township Phase 1 (₹30,000/Sq.Yd)</option>
+                          <option value="SV Township Phase 2 (₹25k/Gaj)">SV Township Phase 2 (₹25,000/Gaj)</option>
+                          <option value="SV Premium Commercial Estate (₹50L/Bigha)">SV Premium Estate (₹50 Lakh/Bigha)</option>
+                        </select>
+                        <i class="fas fa-city"></i>
+                      </div>
+                    </div>
+                    <button type="submit" class="form-btn-submit">
+                      <span>Get Instant Brochure & Best Price</span>
+                      <i class="fas fa-arrow-right"></i>
+                    </button>
+                  </form>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Slider Revolution Navigation Controls -->
+      <button class="rev-arrow rev-arrow-prev" id="revPrevBtn" type="button" aria-label="Previous Slide"><i class="fas fa-chevron-left"></i></button>
+      <button class="rev-arrow rev-arrow-next" id="revNextBtn" type="button" aria-label="Next Slide"><i class="fas fa-chevron-right"></i></button>
+
+      <!-- Bullet Indicators -->
+      <div class="rev-bullets" id="revBullets">
+        <span class="rev-bullet active" data-slide="0"></span>
+        <span class="rev-bullet" data-slide="1"></span>
       </div>
     </section>
 
