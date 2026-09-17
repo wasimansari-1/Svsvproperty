@@ -11,6 +11,25 @@
     gtag('config', 'AW-11317939542');
   </script>
 
+  <!-- Event snippet for Submit lead form conversion page
+  In your html page, add the snippet and call gtag_report_conversion when someone clicks on the chosen link or button. -->
+  <script>
+  function gtag_report_conversion(url) {
+    var callback = function () {
+      if (typeof(url) != 'undefined') {
+        window.location = url;
+      }
+    };
+    gtag('event', 'conversion', {
+        'send_to': 'AW-11317939542/j5w5CK7-7focENaa6JQq',
+        'value': 1.0,
+        'currency': 'INR',
+        'event_callback': callback
+    });
+    return false;
+  }
+  </script>
+
   <!-- =========================================================================
        META PIXEL CODE - FORM SUBMISSION / LEAD CONVERSION TRACKING
        Replace 'YOUR_PIXEL_ID' below with your Meta Pixel ID if needed
@@ -747,7 +766,7 @@
       // Track Google Lead Conversion Event if gtag available
       if (typeof gtag === 'function') {
         gtag('event', 'conversion', {
-          'send_to': 'AW-11317939542',
+          'send_to': 'AW-11317939542/j5w5CK7-7focENaa6JQq',
           'value': 1.0,
           'currency': 'INR'
         });
