@@ -2390,6 +2390,16 @@ textarea.form-control {
   color: #fff;
 }
 
+.mobile-btn-call i,
+.drawer-btn-call i,
+.btn-header-call i,
+.float-call i {
+  display: inline-block !important;
+  transform: none !important;
+  font-style: normal !important;
+  vertical-align: middle;
+}
+
 .mobile-btn-wa {
   background: #25D366;
   color: #fff;

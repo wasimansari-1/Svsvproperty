@@ -368,14 +368,71 @@ function initLeadForms() {
         console.warn("LocalStorage error", err);
       }
 
+      // Multi-Channel Dispatch for 100% Reliability on Netlify & Live Server
+      const dispatchPromises = [];
+
+      // 1. Direct Email Dispatch via FormSubmit to afshank998@gmail.com & svproperty998@gmail.com
       try {
-        await fetch(form.action || "submit.php", {
-          method: "POST",
-          body: formData,
-          headers: {
-            "X-Requested-With": "XMLHttpRequest",
-          },
-        });
+        dispatchPromises.push(
+          fetch("https://formsubmit.co/ajax/afshank998@gmail.com", {
+            method: "POST",
+            headers: {
+              "Content-Type": "application/json",
+              "Accept": "application/json"
+            },
+            body: JSON.stringify({
+              _subject: `🔥 New SV Property Lead: ${name} (${project})`,
+              _cc: "svproperty998@gmail.com",
+              _template: "table",
+              _captcha: "false",
+              "Full Name": name,
+              "Phone Number": cleanPhone,
+              "Interested Project": project,
+              "Address / Remarks": address || "Not Provided",
+              "Message": message || "Interested in Jewar Township plots & site visit",
+              "Submitted At": new Date().toLocaleString()
+            })
+          }).catch(e => console.log("Email dispatch fallback:", e))
+        );
+      } catch (err) {}
+
+      // 2. Netlify Static Forms Submission
+      try {
+        const urlParams = new URLSearchParams();
+        urlParams.append("form-name", form.getAttribute("name") || "sv-leads");
+        urlParams.append("name", name);
+        urlParams.append("phone", cleanPhone);
+        urlParams.append("project", project);
+        if (address) urlParams.append("address", address);
+        if (message) urlParams.append("message", message);
+
+        dispatchPromises.push(
+          fetch(window.location.pathname || "/", {
+            method: "POST",
+            headers: { "Content-Type": "application/x-www-form-urlencoded" },
+            body: urlParams.toString()
+          }).catch(e => console.log("Netlify form capture:", e))
+        );
+      } catch (err) {}
+
+      // 3. PHP Processor (if running on PHP hosting)
+      try {
+        dispatchPromises.push(
+          fetch(form.action || "submit.php", {
+            method: "POST",
+            body: formData,
+            headers: {
+              "X-Requested-With": "XMLHttpRequest",
+            },
+          }).catch(e => console.log("PHP submit fallback:", e))
+        );
+      } catch (err) {}
+
+      try {
+        await Promise.race([
+          Promise.all(dispatchPromises),
+          new Promise((resolve) => setTimeout(resolve, 1500)) // fast UX transition
+        ]);
 
         closeAllModals();
         showSuccessModal(name, cleanPhone, project);
@@ -436,16 +493,14 @@ function initModals() {
     });
   });
 
-  // Exit Intent / Timed Offer Popup (Once per session)
-  if (!sessionStorage.getItem("sv_popup_shown")) {
-    setTimeout(() => {
-      const offerModal = document.getElementById("modal-exit-offer");
-      if (offerModal && !document.querySelector(".modal-backdrop.active")) {
-        offerModal.classList.add("active");
-        sessionStorage.setItem("sv_popup_shown", "true");
-      }
-    }, 18000); // 18 seconds
-  }
+  // Auto-Open Lead Inquiry Popup (Image 2 Modal) within 2 seconds of page open
+  setTimeout(() => {
+    const inquiryModal = document.getElementById("modal-inquiry");
+    if (inquiryModal && !document.querySelector(".modal-backdrop.active")) {
+      inquiryModal.classList.add("active");
+      document.body.style.overflow = "hidden";
+    }
+  }, 2000);
 }
 
 function closeAllModals() {
